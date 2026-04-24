@@ -1,0 +1,222 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: "Space Grotesk", ui-monospace, monospace;
+  --font-script: "Caveat", cursive;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-2xl:  32px;
+  --radius-pill: 999px;
+
+  /* Brand color aliases */
+  --color-navy:      #00007D;
+  --color-navy-dark: #000031;
+  --color-ice:       #E6FFFF;
+  --color-ice-dark:  #B8FFFF;
+  --color-slate:     #234B6F;
+  --color-magenta:   #DB00B2;
+}
+
+:root {
+  /* ── Semantic tokens ── */
+  --background:          #ffffff;
+  --foreground:          #000031;
+  --card:                #ffffff;
+  --card-foreground:     #000031;
+  --popover:             #ffffff;
+  --popover-foreground:  #000031;
+  --primary:             #00007D;
+  --primary-foreground:  #ffffff;
+  --secondary:           #E6FFFF;
+  --secondary-foreground:#000031;
+  --muted:               #E6FFFF;
+  --muted-foreground:    #234B6F;
+  --accent:              #E6FFFF;
+  --accent-foreground:   #000031;
+  --destructive:         #DB00B2;
+  --border:              #B8FFFF;
+  --input:               #B8FFFF;
+  --ring:                #00007D;
+  --radius:              0.5rem;
+
+  /* ── Navy primary scale ── */
+  --primary-50:  #e6e6f2;
+  --primary-100: #ccccea;
+  --primary-200: #9999d2;
+  --primary-300: #6666bb;
+  --primary-400: #3333a3;
+  --primary-500: #00007d;
+  --primary-600: #00006b;
+  --primary-700: #000058;
+  --primary-800: #000045;
+  --primary-900: #000031;
+  --primary-950: #00001f;
+
+  /* ── Cyan tint scale ── */
+  --cyan-50:  #f5ffff;
+  --cyan-100: #e6ffff;
+  --cyan-200: #d2ffff;
+  --cyan-300: #b8ffff;
+  --cyan-400: #8cf2f2;
+  --cyan-500: #5fd9d9;
+  --cyan-600: #3fbfbf;
+  --cyan-700: #2a9a9a;
+  --cyan-800: #1d7373;
+  --cyan-900: #0f4d4d;
+
+  /* ── Neutral scale ── */
+  --neutral-50:  #fcfcfe;
+  --neutral-100: #f5f6fb;
+  --neutral-200: #e6e8f2;
+  --neutral-300: #c8cde0;
+  --neutral-400: #9aa2bf;
+  --neutral-500: #6a7596;
+  --neutral-600: #4a577a;
+  --neutral-700: #234b6f;
+  --neutral-800: #12253f;
+  --neutral-900: #000031;
+  --neutral-950: #00001f;
+
+  /* ── Critical / magenta scale ── */
+  --critical-50:  #fde6f7;
+  --critical-100: #fbcceb;
+  --critical-300: #f066d4;
+  --critical-500: #db00b2;
+  --critical-600: #c20099;
+  --critical-700: #9e007d;
+
+  /* ── Success ── */
+  --success-50:  #e0f7f3;
+  --success-100: #bfeee4;
+  --success-500: #01a18e;
+  --success-600: #008f79;
+  --success-700: #007a64;
+
+  /* ── Warning ── */
+  --warning-50:  #fdf5e2;
+  --warning-100: #f8e7b5;
+  --warning-600: #ac7302;
+  --warning-700: #85590a;
+
+  /* ── Surface aliases ── */
+  --surface-page:    #ffffff;
+  --surface-subtle:  #f5fdfd;
+  --surface-muted:   #E6FFFF;
+  --surface-inverse: #000031;
+
+  /* ── Stroke aliases ── */
+  --stroke-subtle:  #e8f7f7;
+  --stroke-default: #B8FFFF;
+  --stroke-accent:  #9999d2;
+  --stroke-focus:   #00007d;
+
+  /* ── Foreground aliases ── */
+  --fg-primary:   #000031;
+  --fg-secondary: #12253f;
+  --fg-tertiary:  #234b6f;
+  --fg-disabled:  #9aa2bf;
+  --fg-on-accent: #ffffff;
+  --fg-accent:    #00007d;
+  --fg-critical:  #db00b2;
+  --fg-success:   #008f79;
+  --fg-warning:   #ac7302;
+
+  /* ── Shadows (navy-tinted) ── */
+  --shadow-xs:    0 1px 1px 0 rgba(0,0,49,0.08);
+  --shadow-sm:    0 1px 1px 0 rgba(0,0,49,0.16), 0 1px 2px 0 rgba(0,0,49,0.04);
+  --shadow-md:    0 4px 8px 0 rgba(0,0,49,0.06), 0 1px 1px 0 rgba(0,0,49,0.16);
+  --shadow-lg:    0 8px 24px 0 rgba(0,0,49,0.10), 0 2px 4px 0 rgba(0,0,49,0.04);
+  --shadow-xl:    0 32px 80px 0 rgba(0,0,49,0.12);
+  --shadow-focus: 0 0 0 3px rgba(0,0,125,0.22);
+
+  /* ── Spacing (4 px base) ── */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;
+  --space-4: 16px;  --space-5: 20px;  --space-6: 24px;
+  --space-8: 32px;  --space-10: 40px; --space-12: 48px;
+  --space-16: 64px; --space-20: 80px; --space-24: 96px;
+  --space-32: 128px;
+
+  /* ── Motion ── */
+  --ease-out:    cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    120ms;
+  --dur-base:    200ms;
+  --dur-slow:    320ms;
+}
+
+@layer base {
+  * { box-sizing: border-box; @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; -webkit-font-smoothing: antialiased; }
+  html { @apply font-sans; }
+}
+
+/* ── Type scale classes ── */
+.ds-display { font-family: var(--font-heading); font-weight: 500; font-size: 72px; line-height: 1.2; letter-spacing: -0.02em; color: var(--fg-primary); }
+.ds-h1      { font-family: var(--font-heading); font-weight: 600; font-size: 48px; line-height: 1.2; letter-spacing: -0.01em; color: var(--fg-primary); }
+.ds-h2      { font-family: var(--font-heading); font-weight: 600; font-size: 32px; line-height: 1.2; letter-spacing: -0.005em; color: var(--fg-primary); }
+.ds-h3      { font-family: var(--font-heading); font-weight: 600; font-size: 24px; line-height: 1.4; color: var(--fg-primary); }
+.ds-h4      { font-family: var(--font-heading); font-weight: 600; font-size: 20px; line-height: 1.4; color: var(--fg-primary); }
+.ds-h5      { font-family: var(--font-sans);    font-weight: 600; font-size: 16px; line-height: 1.4; color: var(--fg-primary); }
+.ds-body-lg { font-family: var(--font-sans);    font-weight: 400; font-size: 18px; line-height: 1.5; color: var(--fg-secondary); }
+.ds-body    { font-family: var(--font-sans);    font-weight: 400; font-size: 16px; line-height: 1.5; color: var(--fg-secondary); }
+.ds-body-sm { font-family: var(--font-sans);    font-weight: 400; font-size: 14px; line-height: 1.5; color: var(--fg-secondary); }
+.ds-caption { font-family: var(--font-sans);    font-weight: 500; font-size: 12px; line-height: 1.4; letter-spacing: 0.02em; color: var(--fg-tertiary); }
+.ds-mono    { font-family: var(--font-mono);    font-weight: 500; font-size: 12px; line-height: 1.4; color: var(--fg-tertiary); }
+.ds-script  { font-family: var(--font-script);  font-weight: 400; color: var(--primary-500); }
+
+/* ── Utility classes ── */
+.text-nav {
+  font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.text-label {
+  font-size: 12px; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--fg-tertiary);
+}
+.text-price { font-size: 14px; font-weight: 600; }
+
+.btn-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 24px; font-size: 14px; font-weight: 500;
+  background-color: var(--primary); color: #fff;
+  border-radius: 10px; border: none; cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.btn-cta:hover { background-color: var(--primary-800); box-shadow: var(--shadow-md); }
+
+.btn-cta-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 24px; font-size: 14px; font-weight: 500;
+  background: #fff; color: var(--primary);
+  border: 1px solid var(--primary-200); border-radius: 10px; cursor: pointer;
+  transition: background var(--dur-base) var(--ease-out);
+}
+.btn-cta-outline:hover { background: var(--primary-50); }
+
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
