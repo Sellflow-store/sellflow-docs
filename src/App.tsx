@@ -47,7 +47,7 @@ export default function App() {
       <aside className="hidden lg:flex flex-col w-56 shrink-0 h-screen sticky top-0" style={{ background: '#fff', borderRight: '1px solid var(--stroke-default)' }}>
         {/* Logo */}
         <div className="p-5" style={{ borderBottom: '1px solid var(--stroke-default)' }}>
-          <img src="/sellflow-logo.png" alt="Sellflow" style={{ height: 22 }} />
+          <img src={`${import.meta.env.BASE_URL}sellflow-logo.png`} alt="Sellflow" style={{ height: 22 }} />
           <p className="ds-caption mt-1">Design System</p>
         </div>
 
@@ -70,7 +70,7 @@ export default function App() {
 
       {/* Mobile header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-12" style={{ background: 'rgba(255,255,255,0.85)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--stroke-default)' }}>
-        <img src="/sellflow-logo.png" alt="Sellflow" style={{ height: 18 }} />
+        <img src={`${import.meta.env.BASE_URL}sellflow-logo.png`} alt="Sellflow" style={{ height: 18 }} />
         <button onClick={() => setMobileOpen(!mobileOpen)} className="ds-body-sm" style={{ color: 'var(--fg-tertiary)' }}>Menu</button>
         {mobileOpen && (
           <div className="absolute top-12 left-0 right-0 p-3 space-y-1" style={{ background: '#fff', borderBottom: '1px solid var(--stroke-default)', boxShadow: 'var(--shadow-lg)' }}>

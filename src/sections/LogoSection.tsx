@@ -55,7 +55,7 @@ export function LogoSection() {
         <div>
           <Label>Wordmark · lockup with accent</Label>
           <Tile bg="#fff">
-            <img src="/sellflow-logo.png" alt="Sellflow" style={{ height: 44, display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}sellflow-logo.png`} alt="Sellflow" style={{ height: 44, display: 'block' }} />
             <span style={{
               ...scriptStyle,
               position: 'absolute',
@@ -76,7 +76,7 @@ export function LogoSection() {
         <div>
           <Label>Wordmark · muted</Label>
           <Tile bg="#E6FFFF">
-            <img src="/sellflow-logo.png" alt="Sellflow" style={{ height: 44, display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}sellflow-logo.png`} alt="Sellflow" style={{ height: 44, display: 'block' }} />
           </Tile>
         </div>
 
@@ -85,7 +85,7 @@ export function LogoSection() {
           <Label>Wordmark · inverse</Label>
           <Tile bg="#000031" border="#000031">
             <img
-              src="/sellflow-logo.png"
+              src={`${import.meta.env.BASE_URL}sellflow-logo.png`}
               alt="Sellflow"
               style={{ height: 44, display: 'block', filter: 'brightness(0) invert(1)' }}
             />
